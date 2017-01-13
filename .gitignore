@@ -1,0 +1,12 @@
+# Vagrant
+.vagrant
+
+# Python
+__pycache__
+
+# Node
+*.log
+node_modules/
+
+# Visual Studio
+.vscode
