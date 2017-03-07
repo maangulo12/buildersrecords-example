@@ -6,17 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var LoginComponent = (function () {
-    function LoginComponent() {
-        this.name = 'LoginComponent';
+var Navbar1Component = (function () {
+    function Navbar1Component() {
     }
-    return LoginComponent;
+    return Navbar1Component;
 }());
-LoginComponent = __decorate([
+Navbar1Component = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'login-component',
-        templateUrl: 'login.html'
+        selector: 'navbar1-component',
+        templateUrl: 'navbar1.html'
     })
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
+], Navbar1Component);
+exports.Navbar1Component = Navbar1Component;

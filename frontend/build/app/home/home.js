@@ -8,14 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var HomeComponent = (function () {
     function HomeComponent() {
-        this.name = 'HomeComponent';
     }
     return HomeComponent;
 }());
 HomeComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'home-cmp',
+        selector: 'home-component',
         templateUrl: 'home.html'
     })
 ], HomeComponent);

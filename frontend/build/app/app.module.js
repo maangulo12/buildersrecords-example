@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
+var navbar1_1 = require("./navbar1/navbar1");
 var home_1 = require("./home/home");
 var login_1 = require("./login/login");
 var appRoutes = [
@@ -28,6 +29,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
+            navbar1_1.Navbar1Component,
             home_1.HomeComponent,
             login_1.LoginComponent
         ],

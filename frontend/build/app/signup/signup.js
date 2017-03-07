@@ -15,7 +15,7 @@ var LoginComponent = (function () {
 LoginComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'login-component',
+        selector: 'login-cmp',
         templateUrl: 'login.html'
     })
 ], LoginComponent);
