@@ -6,10 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var login_form_1 = require("./login.form");
 var LoginComponent = (function () {
     function LoginComponent() {
-        this.name = 'LoginComponent';
+        this.user = new login_form_1.LoginForm('', '');
+        this.submitted = false;
     }
+    LoginComponent.prototype.newLogin = function () {
+        this.user = new login_form_1.LoginForm('', '');
+    };
+    LoginComponent.prototype.onSubmit = function () {
+        this.submitted = true;
+    };
+    Object.defineProperty(LoginComponent.prototype, "diagnostic", {
+        // Remove this when finished
+        get: function () {
+            return JSON.stringify(this.user);
+        },
+        enumerable: true,
+        configurable: true
+    });
     return LoginComponent;
 }());
 LoginComponent = __decorate([

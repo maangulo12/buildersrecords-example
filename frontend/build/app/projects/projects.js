@@ -6,16 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var SignupComponent = (function () {
-    function SignupComponent() {
+var ProjectsComponent = (function () {
+    function ProjectsComponent() {
     }
-    return SignupComponent;
+    return ProjectsComponent;
 }());
-SignupComponent = __decorate([
+ProjectsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'signup-component',
-        templateUrl: 'signup.html'
+        selector: 'projects-component',
+        templateUrl: 'projects.html'
     })
-], SignupComponent);
-exports.SignupComponent = SignupComponent;
+], ProjectsComponent);
+exports.ProjectsComponent = ProjectsComponent;

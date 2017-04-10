@@ -1,0 +1,116 @@
+<!-- Container -->
+<div class="container">
+    <div class="row">
+        <!-- Left Side -->
+        <div class="col-md-3">
+            <!-- List Group -->
+            <ul class="list-group">
+                <!-- Tutorial -->
+                <a ui-sref="tutorial" class="list-group-item">
+                    <span class="glyphicon glyphicon-book glyphicon-padding" aria-hidden="true"></span>
+                    <b> Tutorial </b>
+                </a>
+                <!-- Projects -->
+                <a ui-sref="projects" class="list-group-item active">
+                    <span class="glyphicon glyphicon-folder-open glyphicon-padding" aria-hidden="true"></span>
+                    <b> Projects </b>
+                </a>
+                <!-- Account Settings -->
+                <a ui-sref="account" class="list-group-item">
+                    <span class="glyphicon glyphicon-cog glyphicon-padding" aria-hidden="true"></span>
+                    <b> Account Settings </b>
+                </a>
+                <!-- Send Feedback -->
+                <a ui-sref="feedback" class="list-group-item">
+                    <span class="glyphicon glyphicon-comment glyphicon-padding" aria-hidden="true"></span>
+                    <b> Send Feedback </b>
+                </a>
+            </ul>
+        </div>
+        <!-- Right Side -->
+        <div class="col-md-9">
+            <!-- Error Alert -->
+            <div class="alert alert-danger alert-dismissible text-center" role="alert"
+                 ng-if="vm.errorGet">
+                <span class="glyphicon glyphicon-exclamation-sign glyphicon-padding" aria-hidden="true"></span>
+                <span class="sr-only"> Error: </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"> &times; </span>
+                </button> <b> Could not access your projects. </b>
+            </div>
+            <!-- Page Header -->
+            <div class="row">
+                <!-- Left Side -->
+                <div class="col-xs-6">
+                    <!-- Header -->
+                    <div class="page-header">
+                        <h1> Projects </h1>
+                        <!-- Sub Header -->
+                        <h4 ng-show="vm.projectList.length != 0" class="text-muted"> Select your project </h4>
+                        <h4 ng-show="vm.projectList.length == 0" class="text-muted"> Create your first project </h4>
+                    </div>
+                </div>
+                <!-- Right Side -->
+                <div class="col-xs-6">
+                    <!-- Line Breaks -->
+                    <br><br><br>
+                    <!-- Button -->
+                    <div class="text-right">
+                        <button type="button" class="btn btn-success" title="Create a new project"
+                                ng-click="addModal()">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            <b> New Project </b>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Table -->
+            <table st-table="vm.projectList" class="table table-striped table-hover table-bordered">
+                <!-- Table Body -->
+                <tbody>
+                    <tr ng-repeat="project in vm.projectList">
+                        <td>
+                            <div class="row">
+                                <!-- Left Side -->
+                                <div class="col-xs-9">
+                                    <!-- Project Name -->
+                                    <span class="glyphicon glyphicon-home glyphicon-padding"
+                                          aria-hidden="true"></span>
+                                    <a href ng-click="clicked(project)" ui-sref="overview">
+                                        <b> {{ project.name }} </b>
+                                    </a>
+                                    <!-- Address -->
+                                    <p class="text-muted">
+                                        {{ project.address }} {{ project.city }},
+                                        {{ project.state }} {{ project.zipcode }}
+                                    </p>
+                                </div>
+                                <!-- Right Side -->
+                                <div class="col-xs-3">
+                                    <div class="text-right">
+                                        <!-- Button - Edit Project -->
+                                        <button type="button" class="btn btn-primary" title="Edit"
+                                                ng-click="updateModal(project)">
+                                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!-- Button - Delete Project -->
+                                        <button type="button" class="btn btn-danger" title="Delete"
+                                                ng-click="deleteModal(project)">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- No Projects -->
+                    <tr ng-show="vm.projectList.length == 0">
+                        <td> You do not have any projects yet. </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Line Breaks -->
+    <br><br><br><br>
+</div>
