@@ -12,17 +12,10 @@ export class LoginComponent {
   user = new LoginForm('', '');
   submitted = false;
 
-  newLogin() {
-     this.user = new LoginForm('', '');
-  }
-
-  onSubmit() {
+  onSubmit(value: any) {
     this.submitted = true;
-  }
 
-  // Remove this when finished
-  get diagnostic() { 
-    return JSON.stringify(this.user); 
+    console.log(value);
   }
 
 }

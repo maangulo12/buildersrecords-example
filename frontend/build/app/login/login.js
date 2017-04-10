@@ -12,20 +12,10 @@ var LoginComponent = (function () {
         this.user = new login_form_1.LoginForm('', '');
         this.submitted = false;
     }
-    LoginComponent.prototype.newLogin = function () {
-        this.user = new login_form_1.LoginForm('', '');
-    };
-    LoginComponent.prototype.onSubmit = function () {
+    LoginComponent.prototype.onSubmit = function (value) {
         this.submitted = true;
+        console.log(value);
     };
-    Object.defineProperty(LoginComponent.prototype, "diagnostic", {
-        // Remove this when finished
-        get: function () {
-            return JSON.stringify(this.user);
-        },
-        enumerable: true,
-        configurable: true
-    });
     return LoginComponent;
 }());
 LoginComponent = __decorate([

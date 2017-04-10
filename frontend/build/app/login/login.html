@@ -16,7 +16,7 @@
                 
                 <!-- Alert -->
                 <div class="alert alert-danger alert-dismissible text-center" role="alert"
-                     *ngIf="!loginForm.form.valid && submitted">
+                     *ngIf="loginForm.form.invalid && submitted">
                     <span class="glyphicon glyphicon-exclamation-sign glyphicon-padding" aria-hidden="true"></span>
                     <span class="sr-only"> Error: </span>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -25,10 +25,7 @@
                 </div>
 
                 <!-- Form -->
-                <form name="loginForm" (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm" novalidate>
-                                    
-                    {{diagnostic}}
-                    <br><br>
+                <form name="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
 
                     <!-- Login Field -->
                     <div class="form-group">
@@ -71,9 +68,7 @@
                     <br><br>
                     <!-- Submit -->
                     <div class="form-group text-right">
-                        <button id="login-button" type="submit" class="btn btn-success btn-block"
-                                data-loading-text="Logging In..."
-                                (click)="newHero(); loginForm.reset()">
+                        <button id="login-button" type="submit" class="btn btn-success btn-block"s>
                                 <b> Log In </b>
                         </button>
                     </div>
