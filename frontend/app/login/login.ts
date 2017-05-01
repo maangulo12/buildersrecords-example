@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { LoginForm } from './login.form';
+import { UsersService } from '../services/users.service';
 
 @Component({
   moduleId: module.id,
@@ -12,9 +13,10 @@ export class LoginComponent {
   user = new LoginForm('', '');
   submitted = false;
 
-  onSubmit(value: any) {
-    this.submitted = true;
+  constructor(private usersService: UsersService) {}
 
+  onSubmit(value: any) {
+    this.submitted = true;   
     console.log(value);
   }
 

@@ -10,12 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var rxjs_1 = require("rxjs");
 var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
-        console.log('Service initialized!');
+        this.url = '/api/v1/users';
     }
+    // get list of users
+    LoginService.prototype.getUsers = function () {
+        return this.http.get(this.url)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    // add a user
+    LoginService.prototype.addUser = function () {
+    };
+    // update a user
+    LoginService.prototype.updateUser = function () {
+    };
+    // delete a user
+    LoginService.prototype.deleteUser = function () {
+    };
+    LoginService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body.data || {};
+    };
+    LoginService.prototype.handleError = function (error) {
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return rxjs_1.Observable.throw(errMsg);
+    };
     return LoginService;
 }());
 LoginService = __decorate([

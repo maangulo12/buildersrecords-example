@@ -4,33 +4,36 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }          from '@angular/forms';
 import { HttpModule }           from '@angular/http';
 
-import { AppComponent }      from './app.component';
-import { Navbar1Component }  from './navbar1/navbar1';
-import { HomeComponent }     from './home/home';
-import { LoginComponent }    from './login/login';
-import { SignupComponent }   from './signup/signup';
-import { ProjectsComponent } from './projects/projects';
+import { AppComponent }     from './app.component';
+import { Navbar1Component } from './navbar1/navbar1';
+import { HomeComponent }    from './home/home';
+import { SignupComponent }  from './signup/signup';
+import { LoginComponent }   from './login/login';
+
+import { UsersService }     from './services/users.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'projects', component: ProjectsComponent }
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
   imports: [ 
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: [ 
     AppComponent,
     Navbar1Component,
     HomeComponent,
-    LoginComponent,
     SignupComponent,
-    ProjectsComponent
+    LoginComponent
+  ],
+  providers: [
+    UsersService
   ],
   bootstrap: [ AppComponent ]
 })
